@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MateECommerce"
 include(":app")
- 
+include(":feature:auth")
+include(":core:ui")
