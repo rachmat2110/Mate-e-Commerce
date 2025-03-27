@@ -1,7 +1,9 @@
 package com.example.ui.component
 
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.ClickableText
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -106,6 +108,33 @@ fun MateTextRegular(
     )
 }
 
+@Composable
+fun MateTextViewRow(
+    checked: Boolean = false,
+    onCheckedChanged: (Boolean) -> Unit = {},
+    onTextClick: () -> Unit = {}
+){
+    Row(
+        modifier = Modifier.padding(16.dp)
+    ) {
+        MateCheckBox(
+            checked = checked,
+            onCheckedChanged = onCheckedChanged
+        )
+
+        val annotationString = buildAnnotatedString {
+            append(" Forgot password ?")
+        }
+
+        ClickableText(
+            text = annotationString,
+            onClick = {
+                onTextClick()
+            }
+        )
+    }
+}
+
 @Preview
 @Composable
 fun MateTextHeaderPreview(){
@@ -124,4 +153,10 @@ fun MateTextRegularWithClickPreview(){
 @Composable
 fun MateTextRegularPreview(){
     MateTextRegular()
+}
+
+@Preview
+@Composable
+fun MateTextViewRowPreview(){
+    MateTextViewRow()
 }
