@@ -56,5 +56,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    implementation(libs.androidx.hilt)
+    implementation(libs.androidx.compose)
+    implementation(libs.androidx.compose.navigation.fragment)
+    implementation(libs.androidx.compose.navigation.ui)
+
     debugImplementation(libs.ui.tooling)
 }
