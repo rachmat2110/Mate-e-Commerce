@@ -23,3 +23,4 @@ rootProject.name = "MateECommerce"
 include(":app")
 include(":feature:auth")
 include(":core:ui")
+include(":feature:home")
