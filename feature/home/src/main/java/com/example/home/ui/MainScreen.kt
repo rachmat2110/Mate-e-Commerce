@@ -1,10 +1,5 @@
 package com.example.home.ui
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -17,11 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -29,15 +22,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.ui.component.MateButtonPrimary
-import com.example.ui.component.MateButtonSosmedRow
-import com.example.ui.component.MateEditText
-import com.example.ui.component.MateEditTextPreview
-import com.example.ui.component.MateImageViewClick
-import com.example.ui.component.MateTextHeader
-import com.example.ui.component.MateTextRegular
-import com.example.ui.component.MateTextRegularWithClick
-import com.example.ui.component.MateTextViewRow
+import com.example.home.ui.home.HomeScreen
 import com.example.ui.theme.VeryDarkGrayBlue
 
 @Composable
@@ -118,7 +103,7 @@ fun NavigationGraph(navController: NavHostController, modifier: Modifier){
         startDestination = BottomNavItem.Home.route,
         modifier = modifier)
     {
-        composable(BottomNavItem.Home.route){ HomeScreens()}
+        composable(BottomNavItem.Home.route){ HomeScreen()}
         composable(BottomNavItem.Product.route){ ProductScreens() }
         composable(BottomNavItem.Order.route){ OrderScreens() }
         composable(BottomNavItem.Account.route){ AccountScreens() }

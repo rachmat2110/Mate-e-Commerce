@@ -4,11 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-
-@Composable
-fun HomeScreens() {
-    ScreentContent(title = "Home")
-}
+import com.example.home.ui.home.HomeScreen
 
 @Composable
 fun ProductScreens() {
@@ -35,7 +31,7 @@ fun ScreentContent(title: String) {
 @Preview
 @Composable
 fun HomeScreensPreview() {
-    HomeScreens()
+    HomeScreen()
 }
 
 @Preview
