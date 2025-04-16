@@ -56,4 +56,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     debugImplementation(libs.ui.tooling)
+
+    implementation(libs.com.google.pager)
+    implementation(libs.com.google.pager.indicators)
 }

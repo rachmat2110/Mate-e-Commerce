@@ -13,6 +13,7 @@ material = "1.12.0"
 uiTooling = "1.7.8"
 composeHilt = "1.2.0"
 composeMaterial = "1.7.8"
+pagerIndicator = "0.28.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -37,6 +38,9 @@ androidx-compose = {group = "androidx.navigation", name = "navigation-compose", 
 androidx-compose-navigation-fragment = {group = "androidx.navigation", name = "navigation-fragment", version.ref = "lifecycleRuntimeKtx"}
 androidx-compose-navigation-ui = {group = "androidx.navigation", name = "navigation-ui", version.ref = "lifecycleRuntimeKtx"}
 androidx-compose-material = {group = "androidx.compose.material", name = "material", version.ref = "composeMaterial"}
+com-google-pager = {group = "com.google.accompanist", name = "accompanist-pager", version.ref = "pagerIndicator"}
+com-google-pager-indicators = {group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "pagerIndicator"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
