@@ -15,9 +15,12 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.home.R
+import com.example.ui.component.BannerSliderUiMate
 import com.example.ui.component.MateImageViewClick
 import com.example.ui.component.MateTextRegular
 import com.example.ui.theme.StrongBlue
@@ -76,6 +79,20 @@ fun HomeScreen() {
             )
         }
         // View end untuk bar atas sepanjang search bar (sama seperti linear layout horizontal)
+
+        // View untuk banner slides
+        val image = listOf(
+            painterResource(id = com.example.ui.R.drawable.sample_slide1),
+            painterResource(id = com.example.ui.R.drawable.sample_slide1),
+            painterResource(id = com.example.ui.R.drawable.sample_slide1),
+        )
+        BannerSliderUiMate(
+            bannerImage = image,
+            onClick = {
+
+            }
+        )
+        // End view untuk banner slides
     }
 }
 
