@@ -59,4 +59,5 @@ dependencies {
 
     implementation(libs.com.google.pager)
     implementation(libs.com.google.pager.indicators)
+    implementation(libs.io.koil)
 }
