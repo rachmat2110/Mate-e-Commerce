@@ -6,10 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.home.ui.home.HomeScreen
 
-@Composable
-fun ProductScreens() {
-    ScreentContent(title = "Product")
-}
+
 
 @Composable
 fun OrderScreens() {
@@ -34,9 +31,5 @@ fun HomeScreensPreview() {
     HomeScreen()
 }
 
-@Preview
-@Composable
-fun ProductScreensPreview() {
-    ProductScreens()
-}
+
 
