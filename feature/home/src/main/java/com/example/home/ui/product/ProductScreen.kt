@@ -11,6 +11,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,6 +23,7 @@ import com.example.ui.component.MateImageViewClick
 import com.example.ui.component.MateTextRegular
 import com.example.ui.theme.Gray
 import com.example.ui.theme.Grey
+import com.example.ui.theme.VeryLightGrey
 
 @Composable
 fun ProductScreens() {
@@ -49,11 +51,13 @@ fun ProductScreens() {
                 )
             ) {
                 Row(
-                    modifier = Modifier.padding(horizontal = 16.dp)
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
                         .fillMaxWidth()
                 ) {
                     MateTextRegular(
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
                             .align(Alignment.CenterVertically)
                             .weight(1f),
                         text = "Cari barang kamu disini",
@@ -70,10 +74,16 @@ fun ProductScreens() {
             }
         }
         //End view untuk Search Bar Sama seperti linear layout horizontal orientation
+
+        Divider(
+            modifier = Modifier.fillMaxWidth(),
+            thickness = 2.dp,
+            color = VeryLightGrey
+        )
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
 fun ProductScreensPreview() {
     ProductScreens()
