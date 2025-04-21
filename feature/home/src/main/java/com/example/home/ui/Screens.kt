@@ -9,11 +9,6 @@ import com.example.home.ui.home.HomeScreen
 
 
 @Composable
-fun OrderScreens() {
-    ScreentContent(title = "Order")
-}
-
-@Composable
 fun AccountScreens() {
     ScreentContent(title = "Account")
 }

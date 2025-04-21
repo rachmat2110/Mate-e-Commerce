@@ -23,6 +23,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.home.ui.home.HomeScreen
+import com.example.home.ui.order.OrderScreens
 import com.example.home.ui.product.ProductScreens
 import com.example.ui.theme.VeryDarkGrayBlue
 
