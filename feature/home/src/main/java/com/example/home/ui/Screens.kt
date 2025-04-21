@@ -7,12 +7,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.home.ui.home.HomeScreen
 
 
-
-@Composable
-fun AccountScreens() {
-    ScreentContent(title = "Account")
-}
-
 @Composable
 fun ScreentContent(title: String) {
     Column {
