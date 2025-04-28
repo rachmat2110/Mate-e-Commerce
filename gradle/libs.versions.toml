@@ -15,6 +15,7 @@ composeHilt = "1.2.0"
 composeMaterial = "1.7.8"
 pagerIndicator = "0.28.0"
 coil = "2.5.0"
+hilt = "2.51.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,9 +43,13 @@ androidx-compose-material = {group = "androidx.compose.material", name = "materi
 com-google-pager = {group = "com.google.accompanist", name = "accompanist-pager", version.ref = "pagerIndicator"}
 com-google-pager-indicators = {group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "pagerIndicator"}
 io-koil = {group = "io.coil-kt", name = "coil-compose", version.ref = "coil"}
+com-dagger = {group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
+hilt-android-compiler = {group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
+androidx-hilt-compiler = {group = "androidx.hilt", name = "hilt-compiler", version.ref = "composeHilt"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+hilt-gradle-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 

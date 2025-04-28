@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.hilt.gradle.plugin)
+    id("kotlin-kapt")
 }
 
 android {
@@ -40,6 +42,7 @@ android {
 
 dependencies {
     implementation(project(path = ":core:ui"))
+    implementation(project(path = ":core:navigator"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -63,4 +66,12 @@ dependencies {
     implementation(libs.androidx.compose.navigation.ui)
 
     debugImplementation(libs.ui.tooling)
+
+    implementation(libs.com.dagger)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
+}
+
+kapt{
+    correctErrorTypes = true
 }
