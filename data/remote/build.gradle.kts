@@ -1,11 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.hilt.gradle.plugin)
+    id("kotlin-kapt")
 }
 
 android {
     namespace = "com.example.remote"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -34,6 +36,8 @@ android {
 
 dependencies {
 
+    implementation(project(path = ":domain"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -43,4 +47,15 @@ dependencies {
 
     //Retrofit
     implementation(libs.google.code)
+    implementation(libs.squareup.retrofit)
+    implementation(libs.squareup.retrofit2)
+
+    //Dagger Hilt
+    implementation(libs.com.dagger)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
+}
+
+kapt{
+    correctErrorTypes = true
 }

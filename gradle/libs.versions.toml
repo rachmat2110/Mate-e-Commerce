@@ -50,7 +50,7 @@ io-koil = {group = "io.coil-kt", name = "coil-compose", version.ref = "coil"}
 com-dagger = {group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
 hilt-android-compiler = {group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
 androidx-hilt-compiler = {group = "androidx.hilt", name = "hilt-compiler", version.ref = "composeHilt"}
-squareup-retrofit = {group = "com.squareup.retrofit", name = "retrofit", version.ref = "retrofit"}
+squareup-retrofit = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
 google-code = {group = "com.google.code.gson", name = "gson", version.ref = "googleCode"}
 squareup-retrofit2 = {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit"}
 squareup-okhttp = {group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp"}

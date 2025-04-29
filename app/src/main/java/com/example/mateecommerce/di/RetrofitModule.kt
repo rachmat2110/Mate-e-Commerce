@@ -1,8 +1,10 @@
 package com.example.mateecommerce.di
 
+import com.example.mateecommerce.BuildConfig
 import com.example.mateecommerce.annotation.DefaultOkHttpInstance
 import com.example.mateecommerce.annotation.MateRetrofitInstance
 import com.example.mateecommerce.utils.retrofit.DataTypeAdapterFactory
+import com.example.mateecommerce.utils.retrofit.NetworkResponseAdapterFactory
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides

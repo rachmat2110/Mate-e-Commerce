@@ -1,6 +1,7 @@
 package com.example.mateecommerce.di
 
 import com.example.mateecommerce.annotation.MateRetrofitInstance
+import com.example.remote.service.MateService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,6 +12,6 @@ import retrofit2.Retrofit
 @InstallIn(SingletonComponent::class)
 class ApiServiceModule {
     @Provides
-    fun provideMateService(@MateRetrofitInstance retrofit: Retrofit) : MateService =
+    fun provideMateService(@MateRetrofitInstance retrofit: Retrofit)  =
         retrofit.create(MateService::class.java)
 }
