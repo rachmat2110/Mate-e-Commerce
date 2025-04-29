@@ -30,6 +30,14 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        getByName("debug"){
+            buildConfigField("String", "BASE_URL", "https://assets.bagicode.com/bcompose/")
+        }
+
+        getByName("release"){
+            buildConfigField("String", "BASE_URL", "https://assets.bagicode.com/bcompose/")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -57,6 +65,9 @@ dependencies {
     implementation(project(path = ":feature:auth"))
     implementation(project(path = ":feature:home"))
     implementation(project(path = ":core:navigator"))
+    implementation(project(path = ":domain"))
+    implementation(project(path = ":data:remote"))
+    implementation(project(path = ":data:local"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -76,6 +87,13 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Retrofit
+    implementation(libs.squareup.retrofit)
+    implementation(libs.google.code)
+    implementation(libs.squareup.retrofit2)
+    implementation(libs.squareup.okhttp)
+    implementation(libs.squareup.logging.interceptor)
 }
 
 kapt{
