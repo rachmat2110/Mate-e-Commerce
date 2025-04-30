@@ -43,10 +43,12 @@ android {
 dependencies {
     implementation(project(path = ":core:ui"))
     implementation(project(path = ":core:navigator"))
+    implementation(project(path = ":domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

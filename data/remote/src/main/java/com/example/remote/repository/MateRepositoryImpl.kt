@@ -1,5 +1,6 @@
 package com.example.remote.repository
 
+import android.util.Log
 import com.example.domain.model.base.DomainResource
 import com.example.domain.model.domain.MateSigninDomainModel
 import com.example.domain.repository.MateRepository
@@ -15,6 +16,8 @@ class MateRepositoryImpl @Inject constructor(
         email: String,
         password: String
     ): DomainResource<MateSigninDomainModel> {
+        Log.d("REPOSITORY", "email = $email")
+        Log.d("REPOSITORY", "password = $password")
         return hanleApiCall(
             apiServiceTransform = {
               mateService.postSignIn(

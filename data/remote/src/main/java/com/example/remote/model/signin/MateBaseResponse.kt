@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class MateBaseResponse(
     @SerializedName("code")
-    val code: Int?,
+    val code: Int? = 0,
     @SerializedName("data")
     val data: MateSignInResponse?,
     @SerializedName("message")
