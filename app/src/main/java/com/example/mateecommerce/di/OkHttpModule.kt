@@ -1,6 +1,7 @@
 package com.example.mateecommerce.di
 
 import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.mateecommerce.annotation.DefaultOkHttpInstance
 import dagger.Module
 import dagger.Provides
@@ -29,6 +30,7 @@ class OkHttpModule {
             cache(Cache(context.cacheDir, cacheSize))
             readTimeout(readTimeOut, TimeUnit.SECONDS)
             connectTimeout(connectTimeout, TimeUnit.SECONDS)
+            addInterceptor(ChuckerInterceptor.Builder(context).build())
         }.build()
     }
 }

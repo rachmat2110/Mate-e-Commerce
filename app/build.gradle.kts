@@ -98,6 +98,10 @@ dependencies {
     implementation(libs.squareup.retrofit2)
     implementation(libs.squareup.okhttp)
     implementation(libs.squareup.logging.interceptor)
+
+    //Chucker
+    implementation(libs.com.github.chucker.lib)
+    releaseImplementation(libs.com.github.chucker.lib.no.op)
 }
 
 kapt{
