@@ -46,7 +46,15 @@ fun SignInScreen(
     val context = LocalContext.current
     val email = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
-    
+
+    viewModel.getToken()
+    val token by viewModel.token.observeAsState()
+    LaunchedEffect(token) {
+        if (!token.isNullOrEmpty()){
+            viewModel.onNavigateToHome(context)
+        }
+    }
+
     val signInState by viewModel.signIn.observeAsState()
     LaunchedEffect(signInState) {
         when(val state = signInState){
