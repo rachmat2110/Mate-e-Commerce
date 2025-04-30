@@ -21,12 +21,13 @@ import com.example.ui.theme.VividRed
 @Composable
 fun MateButtonPrimary(
     text: String = "Login Now",
-    onClick: () -> Unit = {}
+    onClick: () -> Unit = {},
+    enable: Boolean = true
 ) {
     MateBaseButton(
         label = text,
         onClick = onClick,
-        enabled = true,
+        enabled = enable,
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)

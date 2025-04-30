@@ -7,6 +7,8 @@ import com.example.remote.model.signin.MateBaseResponse
 class MateSigninDomainMapper : Mapper<MateBaseResponse, MateSigninDomainModel> {
     override fun to(t: MateBaseResponse): MateSigninDomainModel =
         MateSigninDomainModel(
+            code = t.code ?: 0,
+            message = t.message.orEmpty(),
             name = t.data?.name.orEmpty(),
             address = t.data?.address.orEmpty(),
             token = t.data?.token.orEmpty(),

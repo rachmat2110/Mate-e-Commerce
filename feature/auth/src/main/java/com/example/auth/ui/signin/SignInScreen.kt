@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -47,18 +48,24 @@ fun SignInScreen(
     val password = remember { mutableStateOf("") }
     
     val signInState by viewModel.signIn.observeAsState()
-    when(signInState){
-        is SigninState.OnSigninLoading -> {
-            Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
-        }
-        is SigninState.OnSigninError -> {
-            Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-        }
-        is SigninState.OnSigninAvailable -> {
-            viewModel.onNavigateToHome(context)
-        }
-        else -> {
+    LaunchedEffect(signInState) {
+        when(val state = signInState){
+            is SigninState.OnSigninLoading -> {
+                Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
+            }
+            is SigninState.OnSigninError -> {
+                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+            }
+            is SigninState.OnSigninAvailable -> {
+                if (state.signinUiModel?.code == 200){
+                    viewModel.onNavigateToHome(context)
+                }else{
+                    Toast.makeText(context, "Error ${state.signinUiModel?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else -> {
 //            Toast.makeText(context, "Else", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -101,7 +108,8 @@ fun SignInScreen(
             },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Email
-            )
+            ),
+            errorMessage = "Email is required"
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -116,19 +124,25 @@ fun SignInScreen(
             value = password.value,
             onTyping = {
                 password.value = it
-            }
+            },
+            errorMessage = "Password is required"
         )
 
         MateTextViewRow()
 
         MateButtonPrimary(
             onClick = {
-//                viewModel.onNavigateToHome(context)
-                viewModel.postSignin(
-                    email = email.value,
-                    password = password.value
-                )
-            }
+                if(email.value.isBlank() || password.value.isBlank()){
+                    Toast.makeText(context, "Isi semua data", Toast.LENGTH_SHORT).show()
+                    return@MateButtonPrimary
+                }else{
+                    viewModel.postSignin(
+                        email = email.value,
+                        password = password.value
+                    )
+                }
+            },
+            enable = email.value.isNotBlank() && password.value.isNotBlank()
         )
 
         MateButtonSosmedRow(

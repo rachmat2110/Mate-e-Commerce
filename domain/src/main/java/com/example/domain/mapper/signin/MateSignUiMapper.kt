@@ -7,6 +7,8 @@ import com.example.domain.model.ui.MateSigninUiModel
 class MateSignUiMapper : Mapper<MateSigninDomainModel, MateSigninUiModel> {
     override fun to(t: MateSigninDomainModel): MateSigninUiModel {
         return MateSigninUiModel(
+            code = t.code,
+            message = t.message,
             name = t.name,
             address = t.address,
             token = t.token,

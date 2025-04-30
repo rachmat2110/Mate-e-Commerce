@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,12 +26,14 @@ fun MateEditText(
     value:String = "Email",
     onTyping: (String) -> Unit = {},
     visualTransformation: VisualTransformation = VisualTransformation.None,
-    keyboardOptions: KeyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+    keyboardOptions: KeyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+    errorMessage: String = ""
 ) {
     BasicTextField(
         value = value,
         onValueChange = {onTyping.invoke(it)},
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(horizontal = 16.dp)
             .border(width = 1.dp, color = VeryLightGrey, shape = RoundedCornerShape(8.dp))
             .background(Color.White)
@@ -39,6 +42,15 @@ fun MateEditText(
         visualTransformation = visualTransformation,
         keyboardOptions = keyboardOptions
     )
+
+    if (value.isBlank()){
+        Text(
+            text = errorMessage,
+            color = Color.Red,
+            fontSize = 12.sp,
+            modifier = Modifier.padding(horizontal = 16.dp).padding(top = 4.dp)
+        )
+    }
 }
 
 @Preview
